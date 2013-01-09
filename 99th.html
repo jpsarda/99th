@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>99th</title>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+
+    <style type="text/css">
+	a:link {color:#0f0;}
+	a:visited {color:#0f0;}
+	a:hover {color:#0f0;}
+	a:active {color:#0f0;}
+	</style>
+</head>
+<body style="padding:0; margin: 0; background: #000; font-family:'Arial Black'; color:#0f0;">
+<a name="99th"></a>
+<div style="text-align: center; font-size: 0" id="game">
+	<div><center><canvas id="gameCanvas" width="320" height="480"></canvas></center></div>
+</div>
+<center>
+<div id="info">
+
+	<font size=-1 style="font-family:'Arial Narrow';">
+	<p>
+		Work in progress... One button racing / score game. Become 1st as fast as possible. Touching your opponents slows you down. Official place to play the game with highscores : <a href="http://bonuslevel.org/99th/">99th on BonsuLevel.org</a>.
+	</p>
+	<p>
+		99th is an html5 game by <a href="http://twitter.com/jpsarda">@jpsarda</a> made with <a href="http://www.cocos2d-x.org/projects/cocos2d-x/wiki/Cocos2d-html5">cocos2d-html5</a>. Score handled with <a href="https://www.scoreoid.com/">ScoreOid</a>. Twitter login handled with <a href="https://github.com/themattharris/tmhOAuth">tmhOAuth</a>. It's my january entry for <a href="http://onegameamonth.com/jpsarda">OneGameAMonth.com</a>.
+	</p>
+	<br />
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	         var js, fjs = d.getElementsByTagName(s)[0];
+	         if (d.getElementById(id)) return;
+	         js = d.createElement(s); js.id = id;
+	         js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=377551302284696";
+	         fjs.parentNode.insertBefore(js, fjs);
+	         }(document, 'script', 'facebook-jssdk'));</script>
+	BonusLevel.org Games <span style="vertical-align:-20%"><a href="https://twitter.com/jpsarda" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @bonuslevelorg</a></span> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><div class="fb-like" data-href="http://www.facebook.com/BonuslevelGames" data-send="false" data-layout="button_count" data-width="100" stream="false" data-show-faces="false"></div>
+	</font>
+</div>
+</center>
+</body>
+</html>
+<script src="cocos2d.js"></script>
+
+
+<script type="text/javascript">
+function newScore(score,scoretext) {
+}
+function getTimeText(time) {
+	var timeSeconds=Math.floor(time);
+    var timeMilliSeconds=Math.floor((time-timeSeconds)*1000);
+    var timeMinutes=Math.floor(timeSeconds/60);
+    timeSeconds-=timeMinutes*60;
+    if (timeMinutes<10) timeMinutes="0"+timeMinutes;
+    if (timeSeconds<10) timeSeconds="0"+timeSeconds;
+    if (timeMilliSeconds<10) timeMilliSeconds="00"+timeMilliSeconds;
+    else if (timeMilliSeconds<100) timeMilliSeconds="0"+timeMilliSeconds;
+    return timeMinutes+":"+timeSeconds+":"+timeMilliSeconds;
+}
+</script>
+
